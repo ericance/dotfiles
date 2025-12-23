@@ -14,7 +14,7 @@ alias n="nvim"
 alias l="ls -la"
 
 # Remove case sensitivity
-autoload -Uz compinit && compinit -u
+autoload -Uz compinit && compinit -u -d ~/.zcompdump
 matching_rules=(
     'm:{a-z}={A-Z}'       # match lowercase to uppercase
     'm:{A-Z}={a-z}'       # match uppercase to lowercase
@@ -23,9 +23,17 @@ matching_rules=(
 )
 zstyle ':completion:*' matcher-list $matching_rules
 
-# Plugins
-source $(brew --prefix)/share/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+# Cross-Platform Plugins
+if command -v brew >/dev/null 2>&1; then
+	# P means Plugin
+	P_PATH="$(brew --prefix)/share" # Mac
+else
+	P_PATH="/usr/share/zsh/plugins" # Linux 
+fi
 
+source "$P_PATH/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
+source "$P_PATH/zsh-autosuggestions/zsh-autosuggestions.zsh"
+
+# Exports
 export EDITOR="nvim" # use neovim by default
 export PATH=$PATH:~/roblox/tools # for wally-package-types
