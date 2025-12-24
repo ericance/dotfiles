@@ -11,10 +11,18 @@ items=(
 	"$DOTFILES/nvim:$CONFIG/nvim"
 )
 
+echo "Installing packages..."
+if command -v brew >/dev/null 2>&1; then
+	echo 'Detected MacOS: Updating with brew'
+	brew install kitty nvim zsh-fast-syntax-highlighting zsh-autosuggestions
+elif command -v pacman >/dev/null 2>&1; then
+	echo 'Detected Arch: Updating with pacman'
+	sudo pacman -S install kitty nvim zsh-fast-syntax-highlighting zsh-autosuggestions
+fi
+
 # -p means if .config already exists, then don't throw an error
 mkdir -p "$CONFIG"
-
-echo "Installing dotfiles..."
+echo "Linking dotfiles..."
 
 for entry in "${items[@]}"; do
 	# 1. Set separator to a :
@@ -22,14 +30,8 @@ for entry in "${items[@]}"; do
 	# 3. <<< sends the entry string into the read command
 	IFS=":" read -r src dst <<< "$entry"
 
-	# Create link, -s = symbolic, -f = force
-	ln -sf "$src" "$dst"
+	# Create link, -s = symbolic, -f = force, -n don't nest
+	ln -sfn "$src" "$dst"
 done
 
-if command -v brew >/dev/null 2>&1; then
-	echo 'Detected MacOS'
-else
-	echo 'Detected Linux'
-fi
-
-echo 'Dotfiles installed successfully!'
+echo 'Setup completed successfully!'
