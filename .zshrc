@@ -6,7 +6,7 @@ symbol='%% '
 PROMPT="${name}@${host} ${cpath} ${symbol}"
 
 # Aliases
-alias cls="echo nono little guy :3"
+alias c="clear" # use when needed :3
 alias h="cd ~"
 alias x="exit"
 alias g="lazygit"
