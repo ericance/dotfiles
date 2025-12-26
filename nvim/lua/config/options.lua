@@ -2,6 +2,7 @@
 vim.cmd("let g:netrw_liststyle = 3")
 
 vim.opt.clipboard = "unnamedplus"	-- sync system and nvim clipboard  
+vim.opt.shortmess:append("I")		-- hides message when first opening
 vim.opt.relativenumber = true
 vim.opt.termguicolors = true		-- 24 bit color support
 vim.opt.virtualedit = "block"
