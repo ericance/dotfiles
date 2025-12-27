@@ -1,7 +1,7 @@
 -- General
 vim.cmd("let g:netrw_liststyle = 3")
-
 vim.opt.clipboard = "unnamedplus"	-- sync system and nvim clipboard  
+vim.opt.fillchars = { eob = " " }	-- hide ~ on empty lines
 vim.opt.shortmess:append("I")		-- hides message when first opening
 vim.opt.relativenumber = true
 vim.opt.termguicolors = true		-- 24 bit color support
@@ -16,7 +16,7 @@ vim.opt.number = true
 vim.opt.wrap = false				-- don't wrap text
 
 -- Tabs
-vim.opt.softtabstop = 4 -- size of spaces a tab from tab key
-vim.opt.shiftwidth = 4 -- size of >> and << commands
-vim.opt.tabstop = 4 -- tabs are 4 spaces
+vim.opt.softtabstop = 4				-- size of spaces a tab from tab key
+vim.opt.shiftwidth = 4				-- size of >> and << commands
+vim.opt.tabstop = 4					-- tabs are 4 spaces
 

@@ -6,6 +6,3 @@ require("config.lazy")
 
 vim.cmd("colorscheme chromatic") -- my custom theme >:3
 
-
-
-
