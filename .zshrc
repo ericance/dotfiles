@@ -36,4 +36,4 @@ source "$P_PATH/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
 # Exports
 export EDITOR="nvim" # use neovim by default
-export PATH=$PATH:~/roblox/tools # for wally-package-types
+export PATH=$PATH:~/tools # for any command line tool that needs added to path
