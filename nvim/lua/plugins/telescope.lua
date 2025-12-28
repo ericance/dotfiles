@@ -1,4 +1,4 @@
--- Used for searching files and strings
+-- For searching files and strings
 return {
 	"nvim-telescope/telescope.nvim",
 	branch = "0.1.x",
@@ -19,7 +19,7 @@ return {
 				}
 			}
 		}
-		telescope.setup({defaults})
+		telescope.setup({ defaults = defaults })
 		telescope.load_extension("fzf")
 	end,
 }

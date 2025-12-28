@@ -1,3 +1,4 @@
+-- Menu that shows what keys can be pressed
 return {
 	"folke/which-key.nvim",
 	event = "VeryLazy",
