@@ -59,3 +59,5 @@ source "$P_PATH/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
 # Syntax Highlighting
 source "$P_PATH/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
+
+eval "$(starship init zsh)"

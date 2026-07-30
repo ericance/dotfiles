@@ -1,0 +1,14 @@
+stow_dir = "~/dotfiles"
+
+[[package]]
+name = "zsh"
+target = "~"
+ignore = ["README.md"]
+
+[[package]]
+name = "kitty"
+target = "~/.config/kitty"
+
+[[package]]
+name = "fastfetch"
+target = "~/.config/fastfetch"
